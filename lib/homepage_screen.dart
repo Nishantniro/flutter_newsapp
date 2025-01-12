@@ -30,10 +30,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
           child: FutureBuilder(
               future: _fetchNews(),
-              builder: ((context, snapshot) {
+              builder: ((context, AsyncSnapshot snapshot) {
                 if (snapshot.hasData) {
                   return Column(
-                    children: [Text(snapshot.data.toString())],
+                    children: [Text(snapshot.data["articles"].toString())],
                   );
                 } else {
                   return const CircularProgressIndicator();
