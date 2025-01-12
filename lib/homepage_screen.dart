@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_newsapp/constants/url_constants.dart';
+import 'package:flutter_newsapp/widget/news_card.dart';
 import 'package:http/http.dart' as http;
 
 class MyHomePage extends StatefulWidget {
@@ -27,18 +28,22 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-          child: FutureBuilder(
-              future: _fetchNews(),
-              builder: ((context, AsyncSnapshot snapshot) {
-                if (snapshot.hasData) {
-                  return Column(
-                    children: [Text(snapshot.data["articles"].toString())],
-                  );
-                } else {
-                  return const CircularProgressIndicator();
-                }
-              }))),
+      body: SingleChildScrollView(
+        child: Center(
+            child: FutureBuilder(
+                future: _fetchNews(),
+                builder: ((context, AsyncSnapshot snapshot) {
+                  if (snapshot.hasData) {
+                    return Column(
+                      children: [
+                        ...snapshot.data["articles"].map((e) => getNewsCard(e))
+                      ],
+                    );
+                  } else {
+                    return const CircularProgressIndicator();
+                  }
+                }))),
+      ),
     );
   }
 }
