@@ -46,15 +46,17 @@ getNewsCard(e) {
         ),
       ),
     ),
-    GestureDetector(
-      onTap: () => Share.share("read more news at: ${e["url"]}"),
-      child: const Align(
-          alignment: Alignment(0.95, 0.4),
-          child: Icon(
-            Icons.share,
-            color: Colors.white,
-            size: 40,
-          )),
+    Positioned(
+      top: 10.0,
+      right: 20.0,
+      child: GestureDetector(
+        onTap: () => Share.share("read more news at: ${e["url"]}"),
+        child: const Icon(
+          Icons.share,
+          color: Colors.white,
+          size: 30,
+        ),
+      ),
     )
   ]);
 }
