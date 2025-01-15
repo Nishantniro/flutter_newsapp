@@ -48,12 +48,12 @@ getNewsCard(e) {
     ),
     GestureDetector(
       onTap: () => Share.share("read more news at: ${e["url"]}"),
-      child: const Positioned(
-          top: 10,
-          right: 10,
+      child: const Align(
+          alignment: Alignment(0.95, 0.4),
           child: Icon(
             Icons.share,
             color: Colors.white,
+            size: 40,
           )),
     )
   ]);
