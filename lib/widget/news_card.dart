@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import '../constants/url_constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -45,12 +46,15 @@ getNewsCard(e) {
         ),
       ),
     ),
-    const Positioned(
-        top: 10,
-        right: 10,
-        child: Icon(
-          Icons.share,
-          color: Colors.white,
-        ))
+    GestureDetector(
+      onTap: () => Share.share("read more news at: ${e["url"]}"),
+      child: const Positioned(
+          top: 10,
+          right: 10,
+          child: Icon(
+            Icons.share,
+            color: Colors.white,
+          )),
+    )
   ]);
 }
