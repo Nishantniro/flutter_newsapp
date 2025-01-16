@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) =>
-                  MyHomePage(title: "world's top headlines")));
+                  MyHomePage(title: "World's Top Headlines")));
     });
     return Scaffold(
         body: Column(
@@ -19,7 +19,11 @@ class SplashScreen extends StatelessWidget {
         Container(
           height: 100,
         ),
-        Image.asset("/assets/icon/appIcon.png"),
+        Image.asset("assets/icon/appIcon.png"),
+        Container(
+          height: 100,
+        ),
+        CircularProgressIndicator()
       ],
     ));
   }
