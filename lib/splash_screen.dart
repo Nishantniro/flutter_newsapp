@@ -17,11 +17,26 @@ class SplashScreen extends StatelessWidget {
         body: Column(
       children: [
         Container(
-          height: 100,
+          height: 200,
         ),
-        Image.asset("assets/icon/appIcon.png"),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(18),
+          child: Image.asset(
+            'assets/appIcon.png',
+            width: 300.0,
+            height: 300.0,
+          ),
+        ),
         Container(
-          height: 100,
+          height: 10,
+        ),
+        Text(
+          "NewsNNN",
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 0, 0, 0),
+              fontSize: 29,
+              fontStyle: FontStyle.normal),
         ),
         CircularProgressIndicator()
       ],
