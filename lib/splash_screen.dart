@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_newsapp/homepage_screen.dart';
+import 'package:NewsNNN/homepage_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);

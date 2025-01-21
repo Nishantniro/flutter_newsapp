@@ -1,6 +1,8 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.nishant.NewsNNN"
+>
     <application
-        android:label="flutter_newsapp"
+        android:label="NewsNNN"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
